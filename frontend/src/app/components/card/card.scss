@@ -1,0 +1,27 @@
+.card {
+  height: 80px;
+  width: 50px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+
+  &.selectable {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  &.selectable:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-5px);
+  }
+
+  &.selectable.selected {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-10px);
+  }
+}

@@ -1,0 +1,28 @@
+<div class="container">
+  <nav>
+    <span>Game's name</span>
+    <button>Invite Players</button>
+  </nav>
+
+  <div class="board">
+    <div class="players-cards">
+      @for (player of players; track player.id) {
+      <div class="player">
+        <app-card [value]="player.selectedCard" [selectable]="false"></app-card>
+        <div class="player-name">{{ player.name }}</div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="deck-container">
+    <div class="deck">
+      @for (value of cardValues; track value) {
+      <app-card
+        (click)="selectCard(value)"
+        [value]="value"
+        [selected]="selectedCard === value"
+      ></app-card>
+      }
+    </div>
+  </div>
+</div>

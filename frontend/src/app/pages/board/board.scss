@@ -1,0 +1,46 @@
+.container {
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+}
+
+.board {
+  margin: auto 0;;
+  width: 100%;
+}
+
+.players-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.deck-container {
+  padding: 10px;
+  height: 160px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.deck {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  overflow: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
