@@ -5,6 +5,7 @@
 
 # Logs
 logs
+package-lock.json
 *.log
 npm-debug.log*
 pnpm-debug.log*
