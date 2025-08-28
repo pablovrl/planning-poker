@@ -22,6 +22,16 @@ export class PlanningService {
     return room;
   }
 
+  joinRoom(roomId: string, username: string, clientId: string): Room | null {
+    const newPlayer = this.createPlayer(username, clientId);
+
+    const room = this.rooms.find((room) => room.id === roomId);
+    if (!room) return null;
+
+    room.players.push(newPlayer);
+    return room;
+  }
+
   createPlayer(username: string, clientId: string): Player {
     return {
       id: clientId,
