@@ -17,20 +17,11 @@ export class PlanningGateway implements OnGatewayConnection {
 
   handleConnection(client: Socket) {
     console.log('new connection', client.id);
-    client.emit('connected', {
-      message: 'You are connected to the WebSocket server!',
-    });
   }
 
   @SubscribeMessage('createRoom')
-  async createRoom(client: Socket, createRoomDto: CreateRoomDto) {
-    const room = this.planningService.createRoom(
-      createRoomDto.name,
-      createRoomDto.username,
-      client.id,
-    );
-
-    await client.join(room.id);
+  createRoom(client: Socket, createRoomDto: CreateRoomDto) {
+    const room = this.planningService.createRoom(createRoomDto.name, client.id);
     client.emit('roomCreated', room);
   }
 

@@ -7,14 +7,13 @@ import { Player } from './entities/player.entity';
 export class PlanningService {
   private rooms: Room[] = [];
 
-  createRoom(name: string, username: string, creatorId: string): Room {
-    const creator = this.createPlayer(username, creatorId);
+  createRoom(name: string, creatorId: string): Room {
     const room: Room = {
       id: uuidv4(),
       name,
       creatorId,
       createdAt: new Date(),
-      players: [creator],
+      players: [],
       state: 'voting',
     };
 
